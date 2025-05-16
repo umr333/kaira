@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Collections</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/35b6c8a902.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f5f5f5;
+      font-family: 'Georgia', serif;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fffcfc;
+      padding: 15px 30px;
+      flex-wrap: wrap;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: top 0.3s;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 90px;
+      align-items: center;
+      margin-bottom: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgb(18, 18, 18);
+      font-size: 16px;
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: #cc9f77aa;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 160px;
+      top: 100%;
+      left: 0;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: black;
+      padding: 10px 15px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #96806cb9;
+      color: white;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 100px 20px 40px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero-section h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 18px;
+      color: #777;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .feature p{
+        font-size: 18px;
+      color: #777;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+          #demo {
+        max-width: 450px;
+        margin: auto;
+        padding-top: 40px;
+      }
+          
+    .carousel-inner img {
+      width: 100%;
+      height: auto;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      align-items: center;
+}
+    .gallery p{
+        font-size: 18px;
+      color: #777;
+      max-width: 800px;
+      margin: 5px;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 36px;
+      }
+
+      .hero-section p {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+     .carousel-inner img {
+        max-height: 350px; .
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-direction: column;
+        display: none;
+        background-color: #fffcfc;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section h1 {
+        font-size: 28px;
+      }
+
+      .hero-section p {
+        font-size: 14px;
+      }
+
+      .carousel-inner img {
+        max-height: 250px;
+      }
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+
+    .feature {
+      max-width: 250px;
+      text-align: center;
+      gap: 100px;
+    }
+
+    .gallery {
+      padding: 40px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+.new-arrivals {
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.new-arrivals .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.header .view-all {
+  text-decoration: underline;
+  color: #333;
+  font-size: 14px;
+}
+
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+
+.product-card {
+  background: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-card .price {
+  margin-top: 8px;
+  color: #777;
+  font-size: 16px;
+}
+
+
+.favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+}
+.favorite:hover {
+  color: red;
+}
+
+.collection-section {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.collection-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+.collection-image {
+  flex: 1 1 50%;
+}
+
+.collection-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.collection-content {
+  flex: 1 1 50%;
+  padding: 30px;
+}
+
+.collection-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.collection-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.collection-content .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.collection-content .btn:hover {
+  background-color: #333;
+}
+
+
+.blog-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.blog-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.blog-header .view-all {
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+
+.blog-header .view-all:hover {
+  color: #555;
+  border-color: #555;
+}
+
+
+.blog-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.blog-card {
+  background-color: #fff;
+  flex: 1 1 calc(33.333% - 20px);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.blog-info {
+  padding: 20px;
+}
+
+.blog-category {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.blog-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.blog-info p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.partner-logos {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.logo-container img {
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.logo-container img:hover {
+  opacity: 1;
+}
+
+
+.newsletter-signup {
+  padding: 60px 20px;
+  background-color: #efefef;
+  text-align: center;
+  background-image: url('background-pattern.png'); /* Optional if you have a pattern */
+  background-repeat: repeat;
+}
+
+.newsletter-signup h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.signup-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup-form input[type="email"] {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.signup-form button {
+  padding: 12px 15px;
+  font-size: 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-form button:hover {
+  background-color: #444;
+
+}.instagram-gallery {
+  background: #f5f5f5;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.insta.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: px;
+  margin-bottom: 10px;
+}
+
+.insta.gallery img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.follow-us button {
+  padding: 20px ;
+  margin-top: 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.follow-us button:hover {
+  background-color: #444;
+}
+.site-footer {
+  background: #fff;
+  padding: 60px 20px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-about h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.footer-about p {
+  font-size: 14px;
+  color: #666;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #222;
+  font-size: 18px;
+}
+
+.footer-links h4, .footer-contact h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-links ul, .footer-contact {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a, .footer-contact a {
+  color: #222;
+  text-decoration: none;
+}
+
+.footer-contact a:hover, .footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #eee;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 12px;
+  color: #999;
+}
+
+.footer-bottom img {
+  height: 20px;
+  margin: 0 5px;
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <h1 class="m-0">KAIRA</h1>
+    <span class="menu-toggle d-md-none"><i class="fas fa-bars"></i></span>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="#">Home</a>
+        <div class="dropdown-content">
+          <a href="#">Women</a>
+          <a href="#">Men</a>
+          <a href="#">Accessories</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Shop</a>
+        <div class="dropdown-content">
+          <a href="#">Women</a>
+          <a href="#">Men</a>
+          <a href="#">Accessories</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Blog</a>
+        <div class="dropdown-content">
+          <a href="#">Fashion</a>
+          <a href="#">Trends</a>
+          <a href="#">Tips</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Pages</a>
+        <div class="dropdown-content">
+          <a href="#">About</a>
+          <a href="#">FAQ</a>
+          <a href="#">Policy</a>
+        </div>
+      </li>
+      <li><a href="#">Cart (0)</a></li>
+      <li><a href="#"><i class="fa fa-search"></i></a></li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid hero-section">
+    <h1>New Collections</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, sapiente eos ipsum mollitia natus eaque aliquid, nemo ex enim veniam labore voluptatibus expedita ut distinctio dolore asperiores sequi accusantium vitae.</p>
+  </div>
+
+  <div id="demo" class="carousel slide d-flex justify-content-center" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="banner-image-1.jpg" alt="Slide 1">
+      </div>
+      <div class="carousel-item">
+        <img src="banner-image-2.jpg" alt="Slide 2">
+      </div>
+      <div class="carousel-item">
+        <img src="banner-image-3.jpg" alt="Slide 3">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+
+  <div class="features container">
+    <div class="feature">
+      <h4><i class="fas fa-book"></i> Book An Appointment</h4>
+      <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+    </div>
+    <div class="feature">
+      <h4><i class="fas fa-store"></i> Up In Store</h4>
+      <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+    </div>
+    <div class="feature">
+      <h4><i class="fab fa-firstdraft"></i> Packaging</h4>
+      <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+    </div>
+    <div class="feature">
+      <h4><i class="fas fa-dot-circle"></i> Global Returns</h4>
+      <p>At imperdiet dui accumsan sit amet nulla risus est ultricies quis.</p>
+    </div>
+  </div>
+
+  <div class="container gallery">
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <img src="cat-sm-item.jpg" alt="Collection 1">
+        <p> Shop  For Men</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <img src="cat-sm-item2.jpg" alt="Collection 2">
+        <p>Shop For Women</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <img src="cat-sm-item3.jpg" alt="Collection 3">
+        <p>Shop Accessories</p>
+      </div>
+    </div>
+  </div>
+  <section class="new-arrivals">
+    <div class="container">
+      <div class="header">
+        <h2>Our New Arrivals</h2>
+        <a href="#" class="view-all">View All Products</a>
+      </div>
+      
+      <div class="products">
+        
+      
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-3.jpg" alt="Dark Florish Onepiece">
+          <h3>Dark Florish Onepiece</h3>
+          <p class="price">$95.00</p>
+        </div>
+  
+       
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-2.jpg" alt="Baggy Shirt">
+          <h3>Baggy Shirt</h3>
+          <p class="price">$75.00</p>
+        </div>
+  
+     
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-4.jpg" alt="Cotton Off-White Shirt">
+          <h3>Cotton Off-White Shirt</h3>
+          <p class="price">$65.00</p>
+        </div>
+  
+       
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-1.jpg" alt="Crop Sweater">
+          <h3>Crop Sweater</h3>
+          <p class="price">$50.00</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <section class="collection-section">
+    <div class="collection-container">
+      
+      <div class="collection-image">
+        <img src="single-image-2.jpg" alt="Winter Collection">
+      </div>
+  
+      <div class="collection-content">
+        <h2>Classic Winter Collection</h2>
+        <p>
+          Dignissim lacus, turpis ut suspendisse vel tellus. Turpis purus, gravida orci, fringilla a. 
+          Ac sed eu fringilla odio mi. Consequat pharetra at magna imperdiet cursus ac faucibus sit libero. 
+          Ultricies quam nunc, lorem sit lorem urna, pretium aliquam ut. In vel, quis donec dolor id in. 
+          Pulvinar commodo mollis diam sed facilisis at cursus imperdiet cursus ac faucibus sit faucibus sit libero.
+        </p>
+        <a href="#" class="btn">Shop Collection</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="new-arrivals">
+    <div class="container">
+      <div class="header">
+        <h2>Best Selling Item's</h2>
+        <a href="#" class="view-all">View All Products</a>
+      </div>
+      
+      <div class="products">
+        
+      
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-3.jpg" alt="Dark Florish Onepiece">
+          <h3>Dark Florish Onepiece</h3>
+          <p class="price">$95.00</p>
+        </div>
+  
+       
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-2.jpg" alt="Baggy Shirt">
+          <h3>Baggy Shirt</h3>
+          <p class="price">$75.00</p>
+        </div>
+  
+     
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-4.jpg" alt="Cotton Off-White Shirt">
+          <h3>Cotton Off-White Shirt</h3>
+          <p class="price">$65.00</p>
+        </div>
+  
+       
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-1.jpg" alt="Crop Sweater">
+          <h3>Crop Sweater</h3>
+          <p class="price">$50.00</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <section class="new-arrivals">
+    <div class="container">
+      <div class="header">
+        <h2>You May Also Like</h2>
+        <a href="#" class="view-all">View All Products</a>
+      </div>
+      
+      <div class="products">
+        
+      
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-5.jpg" alt="Dark Florish Onepiece">
+          <h3>Dark Florish Onepiece</h3>
+          <p class="price">$95.00</p>
+        </div>
+  
+       
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-6.jpg" alt="Baggy Shirt">
+          <h3>Baggy Shirt</h3>
+          <p class="price">$75.00</p>
+        </div>
+  
+     
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-7.jpg" alt="Cotton Off-White Shirt">
+          <h3>Cotton Off-White Shirt</h3>
+          <p class="price">$65.00</p>
+        </div>
+  
+       
+        <div class="product-card">
+          <div class="favorite">&#9825;</div>
+          <img src="product-item-8.jpg" alt="White Baggy Shirt">
+          <h3>White Baggy Shirt</h3>
+          <p class="price">$50.00</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="blog-header">
+      <h2>Read Blog Posts</h2>
+      <a href="#" class="view-all">View All</a>
+    </div>
+  
+    <div class="blog-container">
+      
+      <div class="blog-card">
+        <img src="post-large-image1.jpg " alt="Blog Image 1">
+        <div class="blog-info">
+          <span class="blog-category">Fashion / Jul 11, 2022</span>
+          <h3>How to Look Outstanding in Pastel</h3>
+          <p>Dignissim lacus, turpis ut suspendisse vel tellus. Turpis purus, gravida orci, fringilla...</p>
+        </div>
+      </div>
+  
+      <div class="blog-card">
+        <img src="post-large-image2.jpg" alt="Blog Image 2">
+        <div class="blog-info">
+          <span class="blog-category">Fashion / Jul 11, 2022</span>
+          <h3>Top 10 Fashion Trend for Summer</h3>
+          <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
+        </div>
+      </div>
+  
+      <div class="blog-card">
+        <img src="post-large-image3.jpg" alt="Blog Image 3">
+        <div class="blog-info">
+          <span class="blog-category">Fashion / Jul 11, 2022</span>
+          <h3>Crazy Fashion with Unique Moment</h3>
+          <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+<section class="partner-logos">
+  <div class="logo-container">
+    <img src="logo1.png" alt="Lavender Agency">
+    <img src="logo2.png" alt="Vintage">
+    <img src="logo3.png" alt="Violet">
+    <img src="logo4.png" alt="Ceathes">
+    <img src="logo5.png" alt="Creater Fav">
+  </div>
+</section>
+
+
+<section class="newsletter-signup">
+  <h2>SIGN UP FOR OUR NEWSLETTER</h2>
+  <form action="#" class="signup-form">
+    <input type="email" placeholder="Your Email Address" required>
+    <button type="submit">SIGN UP</button>
+  </form>
+</section>
+
+<section class="instagram-gallery">
+  <div class="insta-gallery">
+    <img src="insta-item1.jpg" alt="Instagram Photo 1">
+    <img src="insta-item2.jpg" alt="Instagram Photo 2">
+    <img src="insta-item3.jpg" alt="Instagram Photo 3">
+    <img src="insta-item4.jpg" alt="Instagram Photo 4">
+    <img src="insta-item5.jpg" alt="Instagram Photo 5">
+  </div>
+  <div class="follow-us">
+    <button>Follow us on Instagram</button>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-about">
+      <h3>KAIRA</h3>
+      <p>Gravida massa volutpat aenean odio. Amet, turpis erat nullam fringilla elementum diam in. Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>QUICK LINKS</h4>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SERVICES</a></li>
+        <li><a href="#">SINGLE ITEM</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>HELP & INFO</h4>
+      <ul>
+        <li><a href="#">TRACK YOUR ORDER</a></li>
+        <li><a href="#">RETURNS + EXCHANGES</a></li>
+        <li><a href="#">SHIPPING + DELIVERY</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">FIND US EASY</a></li>
+        <li><a href="#">FAQS</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>CONTACT US</h4>
+      <p>Do you have any questions or suggestions?</p>
+      <a href="mailto:contact@yourcompany.com">contact@yourcompany.com</a>
+      <p>Do you need support? Give us a call.</p>
+      <a href="tel:+43720115278">+43 720 11 52 78</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>We ship with: <img src="dhl-logo.png" alt="DHL"></p>
+    <p>Payment Options: <img src="master-card.png" alt="Payments"></p>
+    <p>© Copyright 2022 Kaira. All rights reserved. Design by <a href="#">TemplatesJungle</a>. Distribution by <a href="#">ThemeWagon</a>.</p>
+  </div>
+</footer>
+
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="my website.js">
+    
+  </script>
+</body>
+</html>
